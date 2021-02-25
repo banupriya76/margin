@@ -1,0 +1,87 @@
+actions:
+  - action_hello_world
+  - action_sbi
+  - action_citi
+  - action_icici
+  - action_angel_broking
+  - action_kotak_sec
+  - action_zerodha
+  - action_upstox
+  - action_icici_direct
+  - utter_greet
+  - utter_payoption
+  - utter_pay
+  - utter_sell_share
+  - utter_depo_share
+entities: 
+  - Port_Num
+intents: 
+  - greet
+  - Portfolio_number
+  - pay
+  - sell_share
+  - depo_share
+  - sbi
+  - icici
+  - citi
+  - angel_broking
+  - icici_direct
+  - zerodha
+  - kotak_sec
+  - upstox
+responses: 
+  utter_depo_share:
+    - text: "Enter your email"
+  utter_greet: 
+    - text: "Hey Welcome! Enter your Portfolio number to proceed"
+  utter_pay: 
+    - 
+      buttons: 
+        - 
+          payload: /sbi
+          title: "State Bank of India"
+        - 
+          payload: /icici
+          title: "ICICI Bank"
+        - 
+          payload: /citi
+          title: "CITI Bank"
+      text: "Click any Option to Proceed"
+  utter_payoption: 
+    - 
+      buttons: 
+        - 
+          payload: /pay
+          title: "Pay Now"
+        - 
+          payload: /sell_share
+          title: "Sell Share"
+        - 
+          payload: /depo_share
+          title: "Deposit Share"
+      text: "Click any Option to Proceed"
+  utter_sell_share: 
+    - 
+      buttons: 
+        - 
+          payload: /angelbroking
+          title: "Angel Broking"
+        - 
+          payload: /icici_direct
+          title: "ICICI Direct"
+        - 
+          payload: /zerodha
+          title: Zerodha
+        - 
+          payload: /kotak_sec
+          title: "Kotak Securities"
+        - 
+          payload: /upstox
+          title: Upstox
+      text: "Click any Option to Proceed"
+session_config: 
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots: 
+  Port_Num: 
+    type: unfeaturized
